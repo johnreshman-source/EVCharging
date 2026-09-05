@@ -1,0 +1,106 @@
+/* App-level layout */
+
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: var(--bg-base);
+}
+
+.main-content {
+  flex: 1;
+  width: 100%;
+}
+
+/* Navbar height offset for sticky navbar */
+.has-navbar {
+  padding-top: 64px;
+}
+
+/* Auth pages centred layout */
+.auth-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-6);
+  background: radial-gradient(
+    ellipse 80% 60% at 50% -10%,
+    rgba(111, 240, 160, 0.07) 0%,
+    transparent 60%
+  );
+}
+
+/* Dashboard grid layout */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-6);
+}
+
+@media (max-width: 900px) {
+  .dashboard-grid { grid-template-columns: 1fr; }
+}
+
+/* Stations page split layout */
+.stations-layout {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: var(--space-6);
+  min-height: 600px;
+}
+
+@media (max-width: 1024px) {
+  .stations-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Admin grid */
+.admin-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-4);
+}
+
+@media (max-width: 900px) {
+  .admin-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 600px) {
+  .admin-grid { grid-template-columns: 1fr; }
+}
+
+/* Port cards row */
+.port-cards-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-4);
+}
+
+@media (max-width: 640px) {
+  .port-cards-row { grid-template-columns: 1fr; }
+}
+
+/* Hero background effect */
+.hero-bg {
+  position: relative;
+  background: radial-gradient(
+    ellipse 100% 80% at 50% -20%,
+    rgba(111, 240, 160, 0.06) 0%,
+    transparent 70%
+  );
+}
+
+/* Subtle grid pattern overlay */
+.grid-pattern::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(var(--border) 1px, transparent 1px),
+    linear-gradient(90deg, var(--border) 1px, transparent 1px);
+  background-size: 40px 40px;
+  opacity: 0.3;
+  pointer-events: none;
+}
